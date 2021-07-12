@@ -18,6 +18,10 @@ class App extends React.Component {
     this.setState({ selectedVideo: video });
   };
 
+  componentDidMount() {
+    this.handleSubmit("baby shark");
+  }
+
   handleSubmit = async (searchTerm) => {
     const response = await youtube.get("search", {
       params: {
