@@ -9,6 +9,11 @@ import youtube from "./api/youtube";
 const API_KEY = process.env.REACT_APP_YT_API_KEY;
 
 class App extends React.Component {
+  state = {
+    video: [],
+    selectedVideo: null,
+  };
+
   handleSubmit = async (searchTerm) => {
     const response = await youtube.get("search", {
       params: {
@@ -18,12 +23,16 @@ class App extends React.Component {
         q: searchTerm,
       },
     });
-    console.log(response);
+
+    this.setState({
+      video: response.data.items,
+      selectedVideo: response.data.items[0],
+    });
   };
 
   render() {
     return (
-      <Grid justify="center" container spacing={10}>
+      <Grid justifyContent="center" container spacing={10}>
         <Grid item xs={12}>
           <Grid container spacing={10}>
             <Grid item xs={12}>
