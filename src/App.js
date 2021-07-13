@@ -6,6 +6,9 @@ import { SearchBar, VideoDetail, VideoList } from "./components";
 
 import youtube from "./api/youtube";
 
+import "./main.css";
+import "./reset.css";
+
 const API_KEY = process.env.REACT_APP_YT_API_KEY;
 
 class App extends React.Component {
@@ -41,21 +44,29 @@ class App extends React.Component {
   render() {
     const { selectedVideo, videos } = this.state;
     return (
-      <Grid justifyContent="center" container spacing={10}>
-        <Grid item xs={12}>
-          <Grid container spacing={10}>
-            <Grid item xs={12}>
-              <SearchBar onFormSubmit={this.handleSubmit} />
-            </Grid>
-            <Grid item xs={8}>
-              <VideoDetail video={selectedVideo} />
-            </Grid>
-            <Grid item xs={4}>
-              <VideoList videos={videos} onVideoSelect={this.onVideoSelect} />
-            </Grid>
-          </Grid>
-        </Grid>
-      </Grid>
+      <div>
+        <nav>
+          <div id="nav-start">
+            <button id="nav-burger"></button>
+            <a href="https://www.youtube.com/">
+              <img
+                id="nav-brand"
+                src="https://img.icons8.com/fluent/48/000000/youtube-play.png"
+                alt="Youtube logo"
+              />
+            </a>
+          </div>
+          <SearchBar onFormSubmit={this.handleSubmit} />
+        </nav>
+
+        <main>
+          <section id="video-content">
+            <VideoDetail video={selectedVideo} />
+          </section>
+
+          <VideoList videos={videos} onVideoSelect={this.onVideoSelect} />
+        </main>
+      </div>
     );
   }
 }

@@ -9,11 +9,7 @@ const VideoList = ({ videos, onVideoSelect }) => {
     <VideoItem onVideoSelect={onVideoSelect} key={id} video={video} />
   ));
 
-  return (
-    <Grid container spacing={10}>
-      {listOfVideos}
-    </Grid>
-  );
+  return <aside id="sidebar">{listOfVideos}</aside>;
 };
 
 export default VideoList;

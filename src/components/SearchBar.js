@@ -22,11 +22,16 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <Paper elevation={6} style={{ padding: "25px" }}>
-        <form onSubmit={this.handleSubmit}>
-          <TextField fullWidth label="Search" onChange={this.handleChange} />
+      <div id="nav-center">
+        <form class="search-container">
+          <input
+            type="text"
+            placeholder="Search"
+            name="search"
+            onChange={this.handleChange}
+          ></input>
         </form>
-      </Paper>
+      </div>
     );
   }
 }
