@@ -7,7 +7,11 @@ const VideoItem = ({ video, onVideoSelect }) => {
     <div class="preview-container">
       <div onClick={() => onVideoSelect(video)}>
         <div class="video-thumbnail">
-          <img alt="" src={video.snippet.thumbnails.medium.url}></img>
+          <img
+            class="img-hover"
+            alt=""
+            src={video.snippet.thumbnails.medium.url}
+          ></img>
         </div>
 
         <div class="preview-metadata">

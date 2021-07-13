@@ -470,6 +470,16 @@ nav {
   margin-top: 18px;
 }
 
+.img-hover:hover {
+  -o-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  cursor: pointer;
+  transition: 0.5s;
+  box-shadow: 10px 10px 10px #888888;
+}
+
 .preview-container:first-child {
   margin-top: 0;
   margin-bottom: 8px;

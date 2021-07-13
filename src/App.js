@@ -22,7 +22,7 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    this.handleSubmit("baby shark");
+    this.handleSubmit("interstellar");
   }
 
   handleSubmit = async (searchTerm) => {
@@ -34,6 +34,8 @@ class App extends React.Component {
         q: searchTerm,
       },
     });
+
+    console.log(response);
 
     this.setState({
       videos: response.data.items,
